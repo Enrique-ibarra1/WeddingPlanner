@@ -1,0 +1,44 @@
+@model Wedding
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Plan a Wedding</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Wedding" asp-action="Index">Dashboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Logout">Logout</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <form class="col-5 mx-auto" asp-action="CreateWedding" asp-controller="Wedding" method="post">
+        <input type="hidden" value=""
+        <h3>Enter Wedding Details</h3>
+        <div class="form-group">
+            <label asp-for="WedderOne">Wedder One:</label>
+            <input asp-for="WedderOne" class="form-control">
+        </div>
+        <div class="form-group">
+            <label asp-for="WedderTwo">Wedder Two:</label>
+            <input asp-for="WedderTwo" class="form-control">
+        </div>
+        <div class="form-group">
+            <label asp-for="Date">Date</label>
+            <input type="date" asp-for="Date" class="form-control">
+        </div>
+        <div class="form-group">
+            <label asp-for="Address">Address</label>
+            <input asp-for="Address" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-success">Create</button>
+    </form>
